@@ -35,4 +35,18 @@ public class BoardService {
         board.setDel(true);
         boardRepository.save(board);
     }
+
+    public void likeIt(CnuUser cnuUser, int idx) {
+        Board board = boardRepository.findByIdxAndCnuUser(idx, cnuUser);
+        int i = board.getLikeCount();
+        board.setLikeCount(++i);
+        boardRepository.save(board);
+    }
+
+    public void hateIt(CnuUser cnuUser, int idx) {
+        Board board = boardRepository.findByIdxAndCnuUser(idx, cnuUser);
+        int i = board.getDislikeCount();
+        board.setDislikeCount(++i);
+        boardRepository.save(board);
+    }
 }

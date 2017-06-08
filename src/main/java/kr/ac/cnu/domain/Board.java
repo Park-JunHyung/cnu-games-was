@@ -40,4 +40,7 @@ public class Board {
     private Date updatedAt;
 
     private boolean isDel;
+
+    private int likeCount;
+    private int dislikeCount;
 }
