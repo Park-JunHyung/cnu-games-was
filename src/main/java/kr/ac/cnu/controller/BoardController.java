@@ -88,7 +88,7 @@ public class BoardController {
 
     @CnuLogin
     @ApiImplicitParam(name = "token", value = "Facebook client access token", required = true, dataType = "string", paramType = "header", defaultValue = "")
-    @RequestMapping(value = "/hateBoard", method = RequestMethod.GET)
+    @RequestMapping(value = "/hateBoard/{idx}", method = RequestMethod.GET)
     public void hateBoard(@PathVariable int idx) {
         CnuUser cnuUser = UserContext.getUser();
         boardService.hateIt(cnuUser, idx);
